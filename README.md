@@ -1,47 +1,37 @@
 # MATTERVERSE
 
-An interactive educational material-science platform for exploring engineering materials and nanomaterials.
+An interactive Engineering Chemistry and materials-science learning platform.
 
 ## Stack
-- React + Vite + Three.js frontend (Vercel)
-- Flask + Python API backend (Render)
+- Streamlit + Python
+- Plotly 3D atomic-lattice visualisation
+- Streamlit Community Cloud deployment
 
 ## Features
-- Interactive 3D atomic/material visualizer
-- Material library and material comparison
+- Overview dashboard with interactive 3D atomic lattice
+- Searchable materials library
+- Material properties and reference values
 - Nanoparticle sphere calculator
-- Health and materials API endpoints
+- Material comparison table and density chart
 
 ## Run locally
-Requirements: Node.js 20+ and Python 3.11+.
+Python 3.10 or newer is recommended.
 
-### Backend
 ```bash
-cd backend
-python -m venv .venv
-# Windows PowerShell:
-.venv\Scripts\Activate.ps1
-# macOS/Linux:
-# source .venv/bin/activate
 pip install -r requirements.txt
-python app.py
+streamlit run streamlit_app.py
 ```
-API runs at http://127.0.0.1:5000.
 
-### Frontend
-Open a second terminal:
-```bash
-cd frontend
-npm install
-npm run dev
-```
-Open the URL printed by Vite (usually http://localhost:5173).
+Open the local URL printed by Streamlit (usually http://localhost:8501).
 
-## Deploy
-- Render: create a Web Service from this repository, root directory `backend`, build command `pip install -r requirements.txt`, start command `gunicorn app:app`.
-- Vercel: import this repository, set root directory to `frontend`, framework preset Vite, build command `npm run build`, output directory `dist`.
-- Set Vercel environment variable `VITE_API_URL` to the Render service URL.
-- Set Render environment variable `FRONTEND_ORIGIN` to the deployed Vercel URL.
+## Deploy free with Streamlit Community Cloud
+1. Open https://share.streamlit.io/ and sign in with GitHub.
+2. Click **Create app**.
+3. Select repository `rishi2338/matterverse` and branch `main`.
+4. Set **Main file path** to `streamlit_app.py`.
+5. Click **Deploy**.
+
+This deployment uses Streamlit Community Cloud. Render and Vercel are not required for this version. The free service is subject to Streamlit Community Cloud's usage and availability policies.
 
 ## Educational note
-Values in the demo material catalogue are representative reference values for learning. They are not certified engineering design data or experimental measurements.
+The material catalogue contains representative educational reference values, not certified engineering design data or experimental measurements.
